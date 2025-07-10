@@ -6,20 +6,20 @@ public class ToolItem {
     private final long id;
     private final String integrationId;
     @Setter
-    private ToolStatus status;
+    private ToolItemStatus status;
     private final String color;
-    private final Tool toolId;
+    private final Tool tool;
 
-    public ToolItem(long id, String integrationId, ToolStatus status, String color, Tool toolId) {
+    public ToolItem(long id, String integrationId, ToolItemStatus status, String color, Tool tool) {
         this.id = id;
         this.integrationId = integrationId;
         this.status = status;
         this.color = color;
-        this.toolId = toolId;
+        this.tool = tool;
     }
 
-    public ToolItem(String integrationId, ToolStatus status, String color, Tool toolId) {
-        this(-1L, integrationId, status, color, toolId);
+    public ToolItem(String integrationId, ToolItemStatus status, String color, Tool tool) {
+        this(-1L, integrationId, status, color, tool);
     }
 
     public long getId() {
@@ -30,7 +30,7 @@ public class ToolItem {
         return integrationId;
     }
 
-    public ToolStatus getStatus() {
+    public ToolItemStatus getStatus() {
         return status;
     }
 
@@ -38,8 +38,8 @@ public class ToolItem {
         return color;
     }
 
-    public Tool getToolId() {
-        return toolId;
+    public Tool getTool() {
+        return tool;
     }
 
 }
