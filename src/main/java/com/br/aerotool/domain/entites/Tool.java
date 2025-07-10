@@ -5,22 +5,26 @@ import java.util.Objects;
 
 public class Tool {
     private final long id;
-    private final long integrationId;
+    private final String integrationId;
     private final String description;
     private final String category;
 
-    public Tool(long id, long integrationId, String description, String category) {
+    public Tool(long id, String integrationId, String description, String category) {
         this.id = id;
         this.integrationId = integrationId;
         this.description = description;
         this.category = category;
     }
 
+    public Tool(String integrationId, String description, String category) {
+        this(-1L, integrationId, description, category);
+    }
+
     public long getId() {
         return id;
     }
 
-    public long getIntegrationId() {
+    public String getIntegrationId() {
         return integrationId;
     }
 
