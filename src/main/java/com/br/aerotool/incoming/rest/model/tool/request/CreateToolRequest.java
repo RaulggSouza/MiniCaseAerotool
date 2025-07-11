@@ -1,4 +1,3 @@
 package com.br.aerotool.incoming.rest.model.tool.request;
 
-public class CreateToolRequest {
-}
+public record CreateToolRequest(String integrationId, String description, String category) { }
