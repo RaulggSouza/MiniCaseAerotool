@@ -1,4 +1,3 @@
 package com.br.aerotool.incoming.rest.model.tool.response;
 
-public class CreateToolResponse {
-}
+public record CreateToolResponse(long id, String integrationId, String description, String category) { }
