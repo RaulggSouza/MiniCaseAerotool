@@ -7,16 +7,16 @@ public class Tool {
     private final long id;
     private final String integrationId;
     private final String description;
-    private final String category;
+    private final ToolCategory category;
 
-    public Tool(long id, String integrationId, String description, String category) {
+    public Tool(long id, String integrationId, String description, ToolCategory category) {
         this.id = id;
         this.integrationId = integrationId;
         this.description = description;
         this.category = category;
     }
 
-    public Tool(String integrationId, String description, String category) {
+    public Tool(String integrationId, String description, ToolCategory category) {
         this(-1L, integrationId, description, category);
     }
 
@@ -32,7 +32,7 @@ public class Tool {
         return description;
     }
 
-    public String getCategory() {
+    public ToolCategory getCategory() {
         return category;
     }
 
