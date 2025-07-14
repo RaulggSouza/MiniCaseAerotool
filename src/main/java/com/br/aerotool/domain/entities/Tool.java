@@ -1,7 +1,7 @@
 package com.br.aerotool.domain.entities;
 
 import lombok.Getter;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Getter
@@ -10,9 +10,9 @@ public class Tool {
     private final String integrationId;
     private final String description;
     private final String category;
-    private final LocalDate deletedAt;
+    private final LocalDateTime deletedAt;
 
-    public Tool(long id, String integrationId, String description, String category, LocalDate deletedAt) {
+    public Tool(long id, String integrationId, String description, String category, LocalDateTime deletedAt) {
         this.id = id;
         this.integrationId = integrationId;
         this.description = description;
@@ -20,8 +20,12 @@ public class Tool {
         this.deletedAt = deletedAt;
     }
 
-    public Tool(String integrationId, String description, String category, LocalDate deletedAt) {
+    public Tool(String integrationId, String description, String category, LocalDateTime deletedAt) {
         this(-1L, integrationId, description, category, deletedAt);
+    }
+
+    public Tool markAsDeleted() {
+        return new Tool(id, integrationId, description, category, LocalDateTime.now());
     }
 
     @Override
