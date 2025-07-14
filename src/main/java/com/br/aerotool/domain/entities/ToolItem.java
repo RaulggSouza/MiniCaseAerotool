@@ -1,7 +1,9 @@
 package com.br.aerotool.domain.entities;
 
+import lombok.Getter;
 import lombok.Setter;
 
+@Getter
 public class ToolItem {
     private final long id;
     private final String integrationId;
@@ -20,26 +22,6 @@ public class ToolItem {
 
     public ToolItem(String integrationId, ToolItemStatus status, String color, Tool tool) {
         this(-1L, integrationId, status, color, tool);
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getIntegrationId() {
-        return integrationId;
-    }
-
-    public ToolItemStatus getStatus() {
-        return status;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public Tool getTool() {
-        return tool;
     }
 
 }
