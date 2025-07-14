@@ -1,6 +1,6 @@
-package com.br.aerotool.application.useCases;
+package com.br.aerotool.application.useCases.tool;
 
-import com.br.aerotool.application.interfaces.IDeleteTool;
+import com.br.aerotool.application.interfaces.tool.IDeleteTool;
 import com.br.aerotool.domain.entities.Tool;
 import com.br.aerotool.domain.repositories.IToolRepository;
 import com.br.aerotool.incoming.rest.model.mapper.ToolMapper;
