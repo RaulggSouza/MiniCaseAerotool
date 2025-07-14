@@ -1,4 +1,10 @@
 package com.br.aerotool.domain.repositories;
 
-public interface IToolRepository {
+import com.br.aerotool.application.interfaces.ICreateTool;
+import com.br.aerotool.application.interfaces.IUpdateTool;
+
+public interface IToolRepository extends
+        ICreateTool,
+        IUpdateTool
+{
 }
