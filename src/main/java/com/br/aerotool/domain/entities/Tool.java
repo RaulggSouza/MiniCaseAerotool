@@ -10,32 +10,22 @@ public class Tool {
     private final String integrationId;
     private final String description;
     private final ToolCategory category;
+    private final LocalDateTime deletedAt;
 
-    public Tool(long id, String integrationId, String description, ToolCategory category) {
+    public Tool(long id, String integrationId, String description, ToolCategory category, LocalDateTime deletedAt) {
         this.id = id;
         this.integrationId = integrationId;
         this.description = description;
         this.category = category;
+        this.deletedAt = deletedAt;
     }
 
-    public Tool(String integrationId, String description, ToolCategory category) {
-        this(-1L, integrationId, description, category);
+    public Tool(String integrationId, String description, ToolCategory category, LocalDateTime deletedAt) {
+        this(-1L, integrationId, description, category, deletedAt);
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public String getIntegrationId() {
-        return integrationId;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public ToolCategory getCategory() {
-        return category;
+    public Tool markAsDeleted() {
+        return new Tool(id, integrationId, description, category, LocalDateTime.now());
     }
 
     @Override

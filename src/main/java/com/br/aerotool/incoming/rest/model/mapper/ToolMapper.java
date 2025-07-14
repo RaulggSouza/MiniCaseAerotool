@@ -1,6 +1,7 @@
 package com.br.aerotool.incoming.rest.model.mapper;
 
 import com.br.aerotool.domain.entities.Tool;
+import com.br.aerotool.domain.entities.ToolCategory;
 import com.br.aerotool.incoming.rest.model.tool.request.ToolRequest;
 import com.br.aerotool.incoming.rest.model.tool.response.ToolResponse;
 
@@ -11,7 +12,7 @@ public class ToolMapper {
                 -1L,
                 request.integrationId(),
                 request.description(),
-                request.category(),
+                ToolCategory.valueOf(request.category()),
                 null
         );
     }
@@ -21,7 +22,7 @@ public class ToolMapper {
                 tool.getId(),
                 tool.getIntegrationId(),
                 tool.getDescription(),
-                tool.getCategory(),
+                tool.getCategory().toString(),
                 tool.getDeletedAt()
         );
     }
