@@ -8,6 +8,7 @@ import com.br.aerotool.application.interfaces.IUpdateTool;
 public interface IToolRepository extends
         ICreateTool,
         IUpdateTool,
-        IReadTool
+        IReadTool,
+        IDeleteTool
 {
 }
