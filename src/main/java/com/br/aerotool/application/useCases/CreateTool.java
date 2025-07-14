@@ -1,7 +1,7 @@
 package com.br.aerotool.application.useCases;
 
 import com.br.aerotool.domain.repositories.IToolRepository;
-import com.br.aerotool.incoming.rest.model.tool.request.CreateToolRequest;
+import com.br.aerotool.incoming.rest.model.tool.request.ToolRequest;
 
 import java.util.Objects;
 
@@ -13,7 +13,7 @@ public class CreateTool {
     }
 
     public void create(String integrationId, String description, String category){
-        final var dto = new CreateToolRequest(
+        final var dto = new ToolRequest(
                 Objects.requireNonNull(integrationId, "IntegrationId must not be null"),
                 Objects.requireNonNull(description, "Description must not be null"),
                 Objects.requireNonNull(category, "Category must not be null")

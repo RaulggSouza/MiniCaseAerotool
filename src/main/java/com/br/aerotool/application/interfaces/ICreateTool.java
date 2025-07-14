@@ -1,6 +1,6 @@
 package com.br.aerotool.application.interfaces;
 
-import com.br.aerotool.incoming.rest.model.tool.request.CreateToolRequest;
+import com.br.aerotool.incoming.rest.model.tool.request.ToolRequest;
 
-public interface ICreateTool extends ICreateEntity<CreateToolRequest>{
+public interface ICreateTool extends ICreateEntity<ToolRequest>{
 }

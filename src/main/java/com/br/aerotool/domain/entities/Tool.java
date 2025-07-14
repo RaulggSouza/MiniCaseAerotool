@@ -1,8 +1,10 @@
 package com.br.aerotool.domain.entities;
 
-
+import lombok.Getter;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Getter
 public class Tool {
     private final long id;
     private final String integrationId;
