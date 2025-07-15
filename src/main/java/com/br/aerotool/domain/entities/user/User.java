@@ -5,7 +5,7 @@ import lombok.*;
 import java.util.Objects;
 
 @Getter
-public class User {
+public class User{
     private final String prontuario;
     @Setter
     private String password;

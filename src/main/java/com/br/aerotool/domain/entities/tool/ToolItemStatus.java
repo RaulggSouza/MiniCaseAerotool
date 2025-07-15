@@ -1,5 +1,9 @@
 package com.br.aerotool.domain.entities.tool;
 
+import lombok.Getter;
+import org.apache.coyote.BadRequestException;
+
+@Getter
 public enum ToolItemStatus {
     FUNCIONAL("funcional", "ferramenta utilizável"),
     MANUTENCAO("manutencao", "ferramenta em manutenção"),
@@ -7,14 +11,22 @@ public enum ToolItemStatus {
     DEFEITUOSA("defeituosa", "ferramenta defeituosa");
 
     private final String name;
-    private String description;
+    private final String description;
 
     ToolItemStatus(String name, String description){
         this.name = name;
         this.description = description;
     }
 
-    public ToolCategory getToolItemStatus(String name){
-        return ToolCategory.valueOf(name);
+    public static ToolItemStatus getToolItemStatus(String name) throws BadRequestException {
+        if (name == null || name.isBlank()) {
+            throw new BadRequestException("Input may not be empty");
+        }
+        String key = name.trim().toUpperCase();
+        try {
+            return ToolItemStatus.valueOf(key);
+        }catch (IllegalArgumentException e){
+            throw new BadRequestException("Invalid ToolItem Status: "+ name);
+        }
     }
 }
