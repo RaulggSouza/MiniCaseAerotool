@@ -1,4 +1,4 @@
-package com.br.aerotool.domain.entities;
+package com.br.aerotool.domain.entities.tool;
 
 import lombok.Getter;
 import lombok.Setter;
