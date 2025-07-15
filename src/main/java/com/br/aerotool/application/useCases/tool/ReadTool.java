@@ -1,9 +1,8 @@
 package com.br.aerotool.application.useCases.tool;
 
 import com.br.aerotool.application.interfaces.tool.IReadTool;
-import com.br.aerotool.domain.entities.Tool;
+import com.br.aerotool.domain.entities.tool.Tool;
 import com.br.aerotool.domain.repositories.IToolRepository;
-import com.br.aerotool.incoming.rest.model.tool.response.ToolResponse;
 
 import java.util.Optional;
 

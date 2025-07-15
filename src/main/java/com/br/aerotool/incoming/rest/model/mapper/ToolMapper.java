@@ -1,7 +1,7 @@
 package com.br.aerotool.incoming.rest.model.mapper;
 
-import com.br.aerotool.domain.entities.Tool;
-import com.br.aerotool.domain.entities.ToolCategory;
+import com.br.aerotool.domain.entities.tool.Tool;
+import com.br.aerotool.domain.entities.tool.ToolCategory;
 import com.br.aerotool.incoming.rest.model.tool.request.ToolRequest;
 import com.br.aerotool.incoming.rest.model.tool.response.ToolResponse;
 
