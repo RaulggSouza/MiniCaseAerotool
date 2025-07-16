@@ -13,16 +13,19 @@ public class User{
     private String name;
     @Setter
     private String email;
+    @Setter
+    private Role role;
 
-    public User(String prontuario, String password, String name, String email) {
+    public User(String prontuario, String password, String name, String email, Role role) {
         this.prontuario = prontuario;
         this.password = password;
         this.name = name;
         this.email = email;
+        this.role = role;
     }
 
-    public User(String prontuary) {
-        this.prontuario = prontuary;
+    public User(String prontuario) {
+        this.prontuario = prontuario;
     }
 
     @Override
