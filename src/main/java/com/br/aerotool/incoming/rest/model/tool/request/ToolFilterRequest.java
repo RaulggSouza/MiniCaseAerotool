@@ -1,6 +1,6 @@
 package com.br.aerotool.incoming.rest.model.tool.request;
 
-import com.br.aerotool.domain.entities.ToolCategory;
+import com.br.aerotool.domain.entities.tool.ToolCategory;
 
 import java.time.LocalDateTime;
 
