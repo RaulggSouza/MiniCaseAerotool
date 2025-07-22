@@ -7,6 +7,7 @@ import com.br.aerotool.domain.repositories.IToolRepository;
 import com.br.aerotool.incoming.rest.model.tool.request.ToolFilterRequest;
 import com.br.aerotool.incoming.rest.model.tool.request.ToolRequest;
 import com.br.aerotool.incoming.rest.model.tool.response.ToolResponse;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class ToolRepository implements IToolRepository {
     @Override
     public void create(ToolRequest request) {

@@ -4,10 +4,12 @@ import com.br.aerotool.application.interfaces.tool.IDeleteTool;
 import com.br.aerotool.domain.entities.tool.Tool;
 import com.br.aerotool.domain.repositories.IToolRepository;
 import com.br.aerotool.incoming.rest.model.mapper.ToolMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+@Service
 public class DeleteTool implements IDeleteTool {
     private final IToolRepository iToolRepository;
 

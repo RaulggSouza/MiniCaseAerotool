@@ -4,11 +4,12 @@ import com.br.aerotool.application.interfaces.tool.IReadTool;
 import com.br.aerotool.domain.entities.tool.Tool;
 import com.br.aerotool.domain.repositories.IToolRepository;
 import com.br.aerotool.incoming.rest.model.tool.request.ToolFilterRequest;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ReadTool implements IReadTool {
     private final IToolRepository iToolRepository;
 
