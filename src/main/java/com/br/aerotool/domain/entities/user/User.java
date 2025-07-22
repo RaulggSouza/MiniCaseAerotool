@@ -14,24 +14,27 @@ public class User{
     private String name;
     @Setter
     private String email;
+    private final String document;
     @Setter
     private Role role;
     private LocalDateTime deletedAt;
 
-    public User(String prontuario, String password, String name, String email, Role role, LocalDateTime deletedAt) {
+    public User(String prontuario, String password, String name, String email, String document, Role role, LocalDateTime deletedAt) {
         this.prontuario = prontuario;
         this.password = password;
         this.name = name;
         this.email = email;
+        this.document = document;
         this.role = role;
         this.deletedAt = deletedAt;
     }
 
-    public User(String prontuario, String password, String name, String email) {
+    public User(String prontuario, String password, String name, String email, String document) {
         this.prontuario = prontuario;
         this.password = password;
         this.name = name;
         this.email = email;
+        this.document = document;
     }
 
     public void markAsDeleted() {
