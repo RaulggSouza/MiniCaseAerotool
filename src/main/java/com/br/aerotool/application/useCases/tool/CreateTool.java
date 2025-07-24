@@ -2,9 +2,11 @@ package com.br.aerotool.application.useCases.tool;
 
 import com.br.aerotool.domain.repositories.IToolRepository;
 import com.br.aerotool.incoming.rest.model.tool.request.ToolRequest;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
+@Service
 public class CreateTool {
     private final IToolRepository iToolRepository;
 

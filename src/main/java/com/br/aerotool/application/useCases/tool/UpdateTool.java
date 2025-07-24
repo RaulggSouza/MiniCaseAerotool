@@ -2,10 +2,12 @@ package com.br.aerotool.application.useCases.tool;
 
 import com.br.aerotool.domain.repositories.IToolRepository;
 import com.br.aerotool.incoming.rest.model.tool.response.ToolResponse;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Service
 public class UpdateTool {
     private final IToolRepository iToolRepository;
 
