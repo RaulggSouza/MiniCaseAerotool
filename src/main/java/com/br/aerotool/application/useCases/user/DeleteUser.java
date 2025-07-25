@@ -3,11 +3,13 @@ package com.br.aerotool.application.useCases.user;
 import com.br.aerotool.domain.entities.user.User;
 import com.br.aerotool.domain.repositories.IUserRepository;
 import org.apache.coyote.BadRequestException;
+import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 
+@Service
 public class DeleteUser {
     private final IUserRepository userRepository;
 

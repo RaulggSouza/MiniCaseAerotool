@@ -2,11 +2,13 @@ package com.br.aerotool.application.useCases.user;
 
 import com.br.aerotool.domain.repositories.IUserRepository;
 import com.br.aerotool.incoming.rest.model.user.request.UserRequest;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 import static java.util.Map.entry;
 
+@Service
 public class UpdateUser {
     private final IUserRepository userRepository;
 

@@ -3,11 +3,13 @@ package com.br.aerotool.application.useCases.user;
 import com.br.aerotool.domain.entities.user.User;
 import com.br.aerotool.domain.repositories.IUserRepository;
 import com.br.aerotool.incoming.rest.model.user.request.UserFilterRequest;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+@Service
 public class ReadUser {
     private final IUserRepository userRepository;
 
