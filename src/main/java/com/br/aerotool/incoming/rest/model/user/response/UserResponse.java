@@ -6,5 +6,6 @@ public record UserResponse (String prontuario,
                             String name,
                             String email,
                             String role,
+                            String document,
                             LocalDateTime deletedAt){
 }
