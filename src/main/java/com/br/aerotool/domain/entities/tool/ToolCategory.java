@@ -17,16 +17,4 @@ public enum ToolCategory {
         this.name = name;
         this.description = description;
     }
-
-    public static ToolCategory getToolCategory(String name) throws BadRequestException {
-        if (name == null || name.isBlank()) {
-            throw new BadRequestException("Input may not be empty");
-        }
-        String key = name.trim().toUpperCase();
-        try {
-            return ToolCategory.valueOf(key);
-        }catch (IllegalArgumentException e){
-            throw new BadRequestException("Invalid Tool Category: "+ name);
-        }
-    }
 }

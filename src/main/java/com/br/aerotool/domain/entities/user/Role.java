@@ -17,16 +17,4 @@ public enum Role {
         this.name = name;
         this.description = description;
     }
-
-    public static Role getRole(String name) throws BadRequestException {
-        if (name == null || name.isBlank()) {
-            throw new BadRequestException("Input may not be empty");
-        }
-        String key = name.trim().toUpperCase();
-        try {
-            return Role.valueOf(key);
-        }catch (IllegalArgumentException e){
-            throw new BadRequestException("Invalid Role: "+ name);
-        }
-    }
 }
