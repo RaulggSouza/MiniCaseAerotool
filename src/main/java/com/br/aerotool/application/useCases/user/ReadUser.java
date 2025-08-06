@@ -28,7 +28,6 @@ public class ReadUser {
         if (page < 0) throw new IllegalArgumentException("Page must be greater than or equal 0");
         if (size <= 0) throw new IllegalArgumentException("Size must be greater than 0");
 
-        int offset = page * size;
         String filterRole = role != null && !role.isBlank() ? role.toUpperCase() : null;
 
         return userRepository.findAll(new UserFilterRequest(filterRole, page, size));

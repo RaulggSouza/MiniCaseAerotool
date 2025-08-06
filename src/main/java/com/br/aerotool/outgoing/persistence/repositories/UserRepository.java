@@ -4,10 +4,12 @@ import com.br.aerotool.domain.entities.user.User;
 import com.br.aerotool.domain.repositories.IUserRepository;
 import com.br.aerotool.incoming.rest.model.user.request.UserFilterRequest;
 import com.br.aerotool.incoming.rest.model.user.request.UserRequest;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class UserRepository implements IUserRepository {
     @Override
     public void create(UserRequest userRequest) {
