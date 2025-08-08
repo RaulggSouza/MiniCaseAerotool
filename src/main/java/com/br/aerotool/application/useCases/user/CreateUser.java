@@ -14,7 +14,7 @@ public class CreateUser {
         this.userRepository = userRepository;
     }
     
-    public void create(String prontuario, String password, String name, String email, String document){
+    public void create(String prontuario, String password, String name, String email, String role, String document){
         InputUtils.notBlank(
                 entry("prontuario", prontuario),
                 entry("password", password),
@@ -22,6 +22,6 @@ public class CreateUser {
                 entry("email", email),
                 entry("document", document)
         );
-        userRepository.create(new UserRequest(prontuario, password, name, email, document));
+        userRepository.create(new UserRequest(prontuario, password, name, email, role, document));
     }
 }

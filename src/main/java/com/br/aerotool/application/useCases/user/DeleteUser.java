@@ -1,5 +1,6 @@
 package com.br.aerotool.application.useCases.user;
 
+import com.br.aerotool.domain.ElementAlreadyDeleted;
 import com.br.aerotool.domain.entities.user.User;
 import com.br.aerotool.domain.repositories.IUserRepository;
 import org.apache.coyote.BadRequestException;
@@ -24,6 +25,7 @@ public class DeleteUser {
         Optional<User> maybeUser = userRepository.findById(prontuario);
         if(maybeUser.isEmpty()) throw new NoSuchElementException("User not found. Prontuario: " + prontuario);
         User user = maybeUser.get();
+        if (user.getDeletedAt() == null) throw new ElementAlreadyDeleted("User already has been deleted. Prontuario: " + prontuario);
         user.markAsDeleted();
         userRepository.delete(prontuario);
     }

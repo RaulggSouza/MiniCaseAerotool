@@ -8,12 +8,12 @@ import org.apache.coyote.BadRequestException;
 
 public class ToolMapper {
 
-    public static Tool toEntity(ToolRequest request) throws BadRequestException {
+    public static Tool toEntity(ToolRequest request){
         return new Tool(
                 -1L,
                 request.integrationId(),
                 request.description(),
-                ToolCategory.getToolCategory(request.category()),
+                ToolCategory.valueOf(request.category()),
                 null
         );
     }

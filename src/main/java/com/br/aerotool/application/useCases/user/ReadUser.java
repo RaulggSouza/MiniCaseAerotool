@@ -32,4 +32,8 @@ public class ReadUser {
 
         return userRepository.findAll(new UserFilterRequest(filterRole, page, size));
     }
+
+    public List<User> findAll(){
+        return userRepository.findAll();
+    }
 }
