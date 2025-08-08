@@ -39,6 +39,7 @@ public class UserController {
                 userRequest.password(),
                 userRequest.name(),
                 userRequest.email(),
+                userRequest.role(),
                 userRequest.document());
 
         URI location = ServletUriComponentsBuilder
