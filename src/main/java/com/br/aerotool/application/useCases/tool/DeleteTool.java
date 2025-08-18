@@ -1,0 +1,30 @@
+package com.br.aerotool.application.useCases.tool;
+
+import com.br.aerotool.application.interfaces.tool.IDeleteTool;
+import com.br.aerotool.domain.entities.tool.Tool;
+import com.br.aerotool.domain.repositories.IToolRepository;
+import com.br.aerotool.incoming.rest.model.mapper.ToolMapper;
+import org.springframework.stereotype.Service;
+
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+@Service
+public class DeleteTool implements IDeleteTool {
+    private final IToolRepository iToolRepository;
+
+    public DeleteTool(IToolRepository iToolRepository) {
+        this.iToolRepository = iToolRepository;
+    }
+
+    @Override
+    public void delete(Long id) {
+        Optional<Tool> toolOptional = iToolRepository.findById(id);
+
+        Tool tool = toolOptional
+                .orElseThrow(() -> new NoSuchElementException("Tool not found"));
+
+        Tool toolDeleted = tool.markAsDeleted();
+        iToolRepository.update(ToolMapper.toResponse(toolDeleted));
+    }
+}
