@@ -1,13 +1,11 @@
 package com.br.aerotool.incoming.rest.model.mapper;
 
-import com.br.aerotool.domain.entities.user.Role;
 import com.br.aerotool.domain.entities.user.User;
-import com.br.aerotool.incoming.rest.model.user.request.UserRequest;
+import com.br.aerotool.incoming.rest.model.user.request.UserCreateRequest;
 import com.br.aerotool.incoming.rest.model.user.response.UserResponse;
-import org.apache.coyote.BadRequestException;
 
 public class UserMapper {
-    public static User requestToEntity(UserRequest userRequest) {
+    public static User requestToEntity(UserCreateRequest userRequest) {
         return new User(
                 userRequest.prontuario(),
                 userRequest.password(),
@@ -28,8 +26,8 @@ public class UserMapper {
         );
     }
 
-    public static UserRequest entityToRequest(User user){
-        return new UserRequest(
+    public static UserCreateRequest entityToRequest(User user){
+        return new UserCreateRequest(
                 user.getProntuario(),
                 user.getPassword(),
                 user.getName(),

@@ -6,7 +6,7 @@ import com.br.aerotool.application.useCases.user.ReadUser;
 import com.br.aerotool.application.useCases.user.UpdateUser;
 import com.br.aerotool.domain.entities.user.User;
 import com.br.aerotool.incoming.rest.model.mapper.UserMapper;
-import com.br.aerotool.incoming.rest.model.user.request.UserRequest;
+import com.br.aerotool.incoming.rest.model.user.request.UserCreateRequest;
 import com.br.aerotool.incoming.rest.model.user.request.UserUpdateRequest;
 import com.br.aerotool.incoming.rest.model.user.response.UserResponse;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +34,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createUser(@RequestBody UserRequest userRequest){
+    public ResponseEntity<Void> createUser(@RequestBody UserCreateRequest userRequest){
         createUserUseCase.create(userRequest.prontuario(),
                 userRequest.password(),
                 userRequest.name(),

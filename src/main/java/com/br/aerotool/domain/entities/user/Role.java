@@ -13,12 +13,12 @@ public enum Role {
     PROFESSOR(3, "professor", "professor que pede ferramente");
 
     private final int id;
-    private final String name;
+    private final String code;
     private final String description;
 
-    Role(int id, String name, String description){
+    Role(int id, String code, String description){
         this.id = id;
-        this.name = name;
+        this.code = code;
         this.description = description;
     }
 
@@ -27,6 +27,10 @@ public enum Role {
     }
 
     public static int idFromName(String name){
-        return Role.valueOf(name).getId();
+        return Arrays.stream(values())
+                .filter(r -> r.getCode().equalsIgnoreCase(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Invalid role name: " + name))
+                .getId();
     }
 }
