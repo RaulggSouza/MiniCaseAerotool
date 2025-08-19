@@ -7,7 +7,5 @@ public record UserResponse(String prontuario,
                             String email,
                             String role,
                             String document,
-                            LocalDateTime createdAt,
-                            LocalDateTime updatedAt,
                             LocalDateTime deletedAt){
 }
