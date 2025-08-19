@@ -17,16 +17,4 @@ public enum ToolItemStatus {
         this.name = name;
         this.description = description;
     }
-
-    public static ToolItemStatus getToolItemStatus(String name) throws BadRequestException {
-        if (name == null || name.isBlank()) {
-            throw new BadRequestException("Input may not be empty");
-        }
-        String key = name.trim().toUpperCase();
-        try {
-            return ToolItemStatus.valueOf(key);
-        }catch (IllegalArgumentException e){
-            throw new BadRequestException("Invalid ToolItem Status: "+ name);
-        }
-    }
 }

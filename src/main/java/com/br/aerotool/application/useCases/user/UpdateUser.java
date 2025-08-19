@@ -1,10 +1,9 @@
 package com.br.aerotool.application.useCases.user;
 
+import com.br.aerotool.domain.entities.user.Role;
 import com.br.aerotool.domain.repositories.IUserRepository;
-import com.br.aerotool.incoming.rest.model.user.request.UserRequest;
+import com.br.aerotool.incoming.rest.model.user.request.UserRow;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 import static java.util.Map.entry;
 
@@ -16,14 +15,16 @@ public class UpdateUser {
         this.userRepository = userRepository;
     }
 
-    public void update(String prontuario, String password, String name, String email, String document, String role, LocalDateTime deletedAt){
+    public void update(String prontuario, String password, String name, String email, String role, String document){
         InputUtils.notBlank(
-                entry("prontuario", prontuario),
-                entry("password", password),
-                entry("name", name),
-                entry("email", email),
-                entry("document", document)
+                entry("prontuario", prontuario)
         );
-        userRepository.update(new UserRequest(prontuario, password, name, email, document));
+        Integer roleId = null;
+        if(role != null){
+            if(!role.trim().isEmpty()){
+                roleId = Role.idFromName(role);
+            }
+        }
+        userRepository.update(new UserRow(prontuario, password, name, email, roleId, document));
     }
 }
