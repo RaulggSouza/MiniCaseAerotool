@@ -21,7 +21,7 @@ public class UserMapper {
                 user.getName(),
                 user.getEmail(),
                 user.getDocument(),
-                user.getRole().getName(),
+                user.getRole().getCode(),
                 user.getDeletedAt()
         );
     }
@@ -32,6 +32,7 @@ public class UserMapper {
                 user.getPassword(),
                 user.getName(),
                 user.getEmail(),
+                user.getRole().getCode(),
                 user.getDocument()
         );
     }
