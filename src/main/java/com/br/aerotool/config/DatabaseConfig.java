@@ -2,12 +2,14 @@ package com.br.aerotool.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.springframework.context.annotation.Configuration;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Optional;
 
-public final class DatabaseConfig {
+@Configuration(proxyBeanMethods = false)
+public class DatabaseConfig {
 
     private static final HikariDataSource dataSource;
 
